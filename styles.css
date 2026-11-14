@@ -1,0 +1,309 @@
+/* ============================================================
+   glaze — світла студія манікюру. Кольори і шрифти міняй тут.
+   ============================================================ */
+:root {
+  --milk: #f5efe9;        /* фон */
+  --paper: #fffaf6;       /* картки */
+  --blush: #ecd8cf;       /* ніжний акцент, підкладки */
+  --tint: #efe4dc;        /* фон секцій через одну */
+  --ink: #2b2422;         /* текст */
+  --muted: #7d716b;
+  --cherry: #8c2f3a;      /* головний акцент */
+  --cherry-deep: #5f1f28; /* секція запису */
+  --line: rgba(43, 36, 34, 0.14);
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Onest", system-ui, -apple-system, sans-serif;
+  --radius: 22px;
+  --arch: 999px 999px 24px 24px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body {
+  margin: 0;
+  background: var(--milk);
+  color: var(--ink);
+  font: 400 16px/1.65 var(--sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+figure { margin: 0; }
+a { color: inherit; }
+h1, h2, h3, p { margin: 0; }
+::selection { background: var(--cherry); color: var(--paper); }
+:focus-visible { outline: 2px solid var(--cherry); outline-offset: 3px; }
+
+.wrap { width: min(1180px, 100% - 32px); margin-inline: auto; }
+
+.kicker {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cherry);
+}
+.h2 {
+  font: 500 clamp(40px, 5.2vw, 68px)/1 var(--serif); letter-spacing: -0.01em;
+}
+.h2 em, .hero__title em { font-style: italic; color: var(--cherry); }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 16px 30px; border-radius: 999px; border: 1px solid var(--cherry);
+  background: var(--cherry); color: var(--paper); font: 500 15px/1 var(--sans);
+  text-decoration: none; cursor: pointer; transition: background .2s, color .2s, border-color .2s;
+}
+.btn:hover { background: var(--cherry-deep); border-color: var(--cherry-deep); }
+.btn--small { padding: 11px 20px; font-size: 14px; }
+.btn--light { background: var(--paper); color: var(--cherry-deep); border-color: var(--paper); }
+.btn--light:hover { background: var(--blush); border-color: var(--blush); }
+.link { text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 2px; font-weight: 500; }
+.link:hover { border-color: var(--cherry); color: var(--cherry); }
+
+/* ================= Шапка ================= */
+.header {
+  position: sticky; top: 0; z-index: 50;
+  background: color-mix(in srgb, var(--milk) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s;
+}
+.header.is-scrolled { border-color: var(--line); }
+.header__inner { display: flex; align-items: center; gap: 36px; height: 72px; }
+.logo {
+  font: italic 600 32px/1 var(--serif); color: var(--cherry); text-decoration: none; letter-spacing: -0.01em;
+}
+.nav { display: flex; gap: 28px; margin-left: auto; }
+.nav a { text-decoration: none; font-size: 15px; color: var(--muted); transition: color .2s; }
+.nav a:hover { color: var(--ink); }
+.burger { display: none; }
+
+/* ================= 1. Перший екран ================= */
+.hero { padding: 48px 0 88px; }
+.hero__grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(32px, 6vw, 88px); align-items: center; }
+.hero__title {
+  font: 500 clamp(52px, 7vw, 96px)/0.98 var(--serif); letter-spacing: -0.015em; margin: 18px 0 24px;
+}
+.hero__lead { font-size: 18px; color: var(--muted); max-width: 46ch; }
+.hero__actions { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; margin-top: 34px; }
+.hero__facts {
+  display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 18px 44px;
+  margin: 48px 0 0; padding-top: 26px; border-top: 1px solid var(--line);
+}
+.hero__facts dt { font: 600 34px/1 var(--serif); color: var(--cherry); }
+.hero__facts dd { margin: 6px 0 0; font-size: 13px; color: var(--muted); max-width: 16ch; }
+.hero__photo { position: relative; aspect-ratio: 4 / 5; }
+.hero__photo img { border-radius: var(--arch); }
+.hero__badge {
+  position: absolute; left: -28px; bottom: 44px;
+  background: var(--paper); border-radius: 18px; padding: 16px 20px;
+  font: italic 500 20px/1.2 var(--serif); color: var(--ink);
+  box-shadow: 0 18px 40px -22px rgba(43, 36, 34, 0.45);
+}
+
+/* ================= 2. Палітра ================= */
+.palette { padding: 56px 0; background: var(--paper); border-block: 1px solid var(--line); }
+.palette__inner { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 40px; align-items: center; }
+.palette__head p { color: var(--muted); margin-top: 12px; max-width: 30ch; }
+.swatches { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+.swatch {
+  width: 100%; display: flex; flex-direction: column; align-items: center; gap: 12px;
+  background: none; border: 0; padding: 0; cursor: pointer; font: inherit; color: var(--ink);
+}
+.swatch__nail {
+  display: block; width: 58px; height: 82px;
+  border-radius: 50% 50% 42% 42% / 64% 64% 36% 36%;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--c) 70%, #fff) 0%, var(--c) 45%, color-mix(in srgb, var(--c) 82%, #000) 100%);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06), 0 10px 18px -12px rgba(43, 36, 34, 0.6);
+  position: relative; transition: transform .3s cubic-bezier(.2, .7, .2, 1);
+}
+.swatch__nail::after { /* відблиск лаку */
+  content: ""; position: absolute; left: 22%; top: 12%; width: 18%; height: 42%;
+  border-radius: 50%; background: rgba(255, 255, 255, 0.45); filter: blur(1px);
+}
+.swatch__name { font-size: 14px; }
+.swatch:hover .swatch__nail { transform: translateY(-6px) rotate(-4deg); }
+.swatch.is-picked .swatch__nail { transform: translateY(-6px); box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--cherry); }
+.swatch.is-picked .swatch__name { color: var(--cherry); font-weight: 600; }
+
+/* ================= Секції ================= */
+.section { padding: clamp(80px, 10vw, 128px) 0; }
+.section--tint { background: var(--tint); }
+.section--deep { background: var(--cherry-deep); color: var(--paper); }
+.section__head { max-width: 620px; margin-bottom: 48px; }
+.section__head p { margin-top: 14px; color: var(--muted); font-size: 17px; }
+.section__head p a { color: var(--cherry); }
+.section__head--row { max-width: none; display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; }
+
+/* ================= 3. Ціни ================= */
+.menu { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 4vw, 56px); }
+.menu__title { font: italic 600 30px/1 var(--serif); color: var(--cherry); padding-bottom: 14px; border-bottom: 1px solid var(--line); margin-bottom: 8px; }
+.menu ul { list-style: none; margin: 0; padding: 0; }
+.menu li { display: flex; align-items: baseline; gap: 10px; padding: 12px 0; font-size: 15px; }
+.menu li i { flex: 1; border-bottom: 1px dotted rgba(43, 36, 34, 0.35); transform: translateY(-4px); }
+.menu li b { font: 600 22px/1 var(--serif); white-space: nowrap; }
+.menu__note { margin-top: 28px; color: var(--muted); font-size: 14px; }
+
+/* ================= 4. Роботи ================= */
+.works {
+  list-style: none; margin: 0; padding: 0 max(16px, (100vw - 1180px) / 2) 8px;
+  display: grid; grid-auto-flow: column; grid-auto-columns: clamp(220px, 24vw, 300px); gap: 18px;
+  overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin;
+  scroll-padding-inline: max(16px, (100vw - 1180px) / 2);
+}
+.works:focus-visible { outline-offset: -2px; }
+.work { scroll-snap-align: start; }
+.work img { aspect-ratio: 3 / 4; border-radius: var(--arch); }
+.work span { display: block; margin-top: 12px; font: italic 500 21px/1.2 var(--serif); }
+
+/* ================= 5. Стерильність ================= */
+.care { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(32px, 6vw, 88px); align-items: center; }
+.care__photo { aspect-ratio: 4 / 5; }
+.care__photo img { border-radius: var(--radius); }
+.care__lead { color: var(--muted); font-size: 17px; margin: 16px 0 36px; max-width: 40ch; }
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: step; display: grid; gap: 4px; }
+.steps li {
+  counter-increment: step; display: grid; grid-template-columns: 56px 1fr; column-gap: 8px;
+  padding: 18px 0; border-top: 1px solid var(--line);
+}
+.steps li::before {
+  content: "0" counter(step); grid-row: span 2; font: italic 600 26px/1 var(--serif); color: var(--cherry);
+}
+.steps b { font-weight: 600; font-size: 17px; }
+.steps span { color: var(--muted); font-size: 15px; }
+
+/* ================= 6. Майстри ================= */
+.masters { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 3vw, 36px); }
+.master img { aspect-ratio: 4 / 5; border-radius: var(--arch); margin-bottom: 20px; }
+.master h3 { font: 600 32px/1 var(--serif); }
+.master__role { color: var(--cherry); font-size: 14px; font-weight: 500; margin: 6px 0 8px; }
+.master p:last-child { color: var(--muted); font-size: 15px; }
+
+/* ================= 7. Відгуки ================= */
+.reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.review {
+  background: var(--paper); border-radius: var(--radius); padding: 30px;
+  display: flex; flex-direction: column; gap: 22px; border: 1px solid var(--line);
+}
+.review blockquote { margin: 0; font: italic 500 23px/1.35 var(--serif); }
+.review figcaption { margin-top: auto; font-size: 14px; font-weight: 600; color: var(--cherry); }
+
+/* ================= 8. Запис ================= */
+.booking { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(32px, 6vw, 80px); align-items: start; }
+.booking .h2 em { color: var(--blush); }
+.booking__text p { margin-top: 18px; color: rgba(255, 250, 246, 0.75); font-size: 17px; max-width: 36ch; }
+.booking__alt { list-style: none; margin: 30px 0 0; padding: 0; display: grid; gap: 10px; }
+.booking__alt a { text-decoration: none; border-bottom: 1px solid rgba(255, 250, 246, 0.35); font-weight: 500; }
+.booking__alt a:hover { border-color: var(--paper); }
+.form {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+  background: rgba(255, 250, 246, 0.06); border: 1px solid rgba(255, 250, 246, 0.16);
+  border-radius: var(--radius); padding: clamp(22px, 3vw, 34px);
+}
+.field { display: grid; gap: 7px; font-size: 13px; color: rgba(255, 250, 246, 0.75); }
+.field--wide { grid-column: 1 / -1; }
+.field input, .field select {
+  width: 100%; min-width: 0; font: 400 16px/1.3 var(--sans); color: var(--ink);
+  background: var(--paper); border: 1px solid transparent; border-radius: 12px; padding: 13px 14px;
+  appearance: none; -webkit-appearance: none;
+}
+.field select {
+  background: var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%238c2f3a' stroke-width='1.5'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E") right 14px center no-repeat;
+  padding-right: 36px; cursor: pointer;
+}
+.field input:focus, .field select:focus { outline: none; border-color: var(--blush); box-shadow: 0 0 0 3px rgba(236, 216, 207, 0.35); }
+.field .is-invalid { border-color: #f0a090; box-shadow: 0 0 0 3px rgba(240, 160, 144, 0.35); }
+.form .btn { margin-top: 6px; padding-block: 18px; }
+.form__success { background: var(--paper); color: var(--ink); border-radius: 12px; padding: 14px 16px; font-weight: 600; }
+.form__success span { display: block; font-weight: 400; font-size: 14px; color: var(--muted); margin-top: 2px; }
+.form__success[hidden] { display: none; }
+
+/* ================= 9. Контакти ================= */
+.contacts { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(32px, 6vw, 80px); }
+.contacts__list { margin: 36px 0 0; display: grid; gap: 22px; }
+.contacts__list dt { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.contacts__list dd { margin: 4px 0 0; font-size: 18px; }
+.contacts__list a { text-decoration: none; border-bottom: 1px solid var(--line); }
+.contacts__list a:hover { border-color: var(--cherry); color: var(--cherry); }
+.contacts__map { min-height: 380px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); }
+.contacts__map iframe { width: 100%; height: 100%; min-height: 380px; border: 0; filter: grayscale(0.6) sepia(0.15); }
+
+/* ================= Підвал ================= */
+.footer { border-top: 1px solid var(--line); padding: 28px 0; font-size: 13px; color: var(--muted); }
+.footer__row { display: flex; justify-content: space-between; align-items: center; gap: 12px 24px; flex-wrap: wrap; }
+.footer a { color: var(--cherry); }
+.footer .logo { font-size: 26px; }
+
+.mobile-book { display: none; }
+
+/* ================= Адаптив ================= */
+@media (max-width: 960px) {
+  .nav { gap: 20px; }
+  .palette__inner { grid-template-columns: 1fr; }
+  .menu { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 820px) {
+  .header__inner { height: 64px; gap: 12px; }
+  .header__cta { display: none; }
+  .burger {
+    display: grid; gap: 7px; place-content: center; width: 44px; height: 44px;
+    margin-left: auto; margin-right: -10px; background: none; border: 0; cursor: pointer;
+  }
+  .burger span { width: 24px; height: 1.5px; background: var(--ink); transition: transform .3s; }
+  .burger[aria-expanded="true"] span:first-child { transform: translateY(4.25px) rotate(45deg); }
+  .burger[aria-expanded="true"] span:last-child { transform: translateY(-4.25px) rotate(-45deg); }
+  body.menu-open .header { backdrop-filter: none; background: var(--milk); }
+  .nav {
+    position: fixed; top: 64px; left: 0; width: 100%; height: calc(100dvh - 64px);
+    margin: 0; padding: 24px 16px; background: var(--milk);
+    flex-direction: column; gap: 0;
+    opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s;
+  }
+  .nav.is-open { opacity: 1; visibility: visible; }
+  .nav a { font: 500 40px/1.1 var(--serif); color: var(--ink); padding: 14px 0; border-bottom: 1px solid var(--line); }
+
+  .hero { padding: 20px 0 64px; }
+  .hero__grid { grid-template-columns: 1fr; }
+  .hero__photo { order: -1; aspect-ratio: 4 / 4.2; }
+  .hero__badge { left: 12px; bottom: 16px; font-size: 17px; padding: 12px 14px; }
+  .hero__facts { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .hero__facts dt { font-size: 28px; }
+
+  .swatches { grid-template-columns: repeat(3, 1fr); row-gap: 24px; }
+  .menu { grid-template-columns: 1fr; gap: 36px; }
+  .care, .booking, .contacts { grid-template-columns: 1fr; }
+  .care__photo { aspect-ratio: 16 / 11; }
+  .masters { grid-template-columns: 1fr; gap: 18px; }
+  .master {
+    display: grid; grid-template-columns: 38% 1fr; grid-template-rows: auto auto 1fr;
+    column-gap: 18px; align-items: start;
+  }
+  .master img { grid-row: 1 / 4; margin: 0; aspect-ratio: 4 / 5; height: auto; }
+  .master h3 { align-self: end; padding-top: 18px; }
+  .reviews { grid-template-columns: 1fr; }
+  .form { grid-template-columns: 1fr 1fr; }
+  .section__head { margin-bottom: 32px; }
+  .contacts__map, .contacts__map iframe { min-height: 300px; }
+
+  .footer { padding-bottom: 96px; }
+  .mobile-book {
+    display: flex; justify-content: center; position: fixed; z-index: 40;
+    left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom));
+    padding: 17px; border-radius: 999px; background: var(--cherry); color: var(--paper);
+    font: 500 16px/1 var(--sans); text-decoration: none;
+    box-shadow: 0 14px 30px -12px rgba(95, 31, 40, 0.6);
+    transform: translateY(160%); transition: transform .35s;
+  }
+  .mobile-book.is-visible { transform: none; }
+  body.menu-open .mobile-book { transform: translateY(160%); }
+}
+
+@media (max-width: 480px) {
+  .hero__actions { gap: 18px; }
+  .hero__actions .btn { flex: 1 1 100%; }
+  .master h3 { font-size: 28px; }
+  .form { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}

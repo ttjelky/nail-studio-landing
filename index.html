@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>glaze — студія манікюру в Кременчуці</title>
+  <meta name="description" content="Студія манікюру glaze у Кременчуці: манікюр, педикюр, дизайн. Покриття тримається 3 тижні, стерильні інструменти, онлайн-запис.">
+  <meta property="og:title" content="glaze — студія манікюру в Кременчуці">
+  <meta property="og:description" content="Манікюр, що тримається три тижні. Онлайн-запис за хвилину.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1612887390768-fb02affea7a6?w=1200&q=75&auto=format&fit=crop">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#f5efe9">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 4C18 4 12 16 12 30v26h40V30C52 16 46 4 32 4z' fill='%238c2f3a'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+
+  <header class="header" id="top">
+    <div class="wrap header__inner">
+      <a href="#top" class="logo" aria-label="glaze — на початок">glaze</a>
+      <nav class="nav" id="nav" aria-label="Головне меню">
+        <a href="#prices">Ціни</a>
+        <a href="#works">Роботи</a>
+        <a href="#care">Стерильність</a>
+        <a href="#masters">Майстри</a>
+        <a href="#contacts">Контакти</a>
+      </nav>
+      <a href="#booking" class="btn btn--small header__cta">Записатися</a>
+      <button class="burger" id="burger" aria-label="Відкрити меню" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== 1. ПЕРШИЙ ЕКРАН ===== -->
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div class="hero__text">
+          <p class="kicker">Студія манікюру · Кременчук</p>
+          <h1 class="hero__title">Манікюр, що тримається <em>три тижні</em></h1>
+          <p class="hero__lead">Апаратний і комбінований манікюр, педикюр та дизайн. Без поспіху, без сколів на третій день і з інструментами з крафт-пакета, який відкриваємо при вас.</p>
+          <div class="hero__actions">
+            <a href="#booking" class="btn">Записатися онлайн</a>
+            <a href="#prices" class="link">Подивитися ціни</a>
+          </div>
+          <dl class="hero__facts">
+            <div><dt>4.9</dt><dd>у Google, 140+ відгуків</dd></div>
+            <div><dt>21 день</dt><dd>гарантія на покриття</dd></div>
+            <div><dt>180°</dt><dd>сухожар для інструментів</dd></div>
+          </dl>
+        </div>
+        <figure class="hero__photo">
+          <img src="https://images.unsplash.com/photo-1612887390768-fb02affea7a6?w=1100&q=75&auto=format&fit=crop" alt="Рука з ніжно-рожевим манікюром на білій тканині" fetchpriority="high">
+          <figcaption class="hero__badge">Скол за 21 день — <br>перекриємо безкоштовно</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== 2. ПАЛІТРА ===== -->
+    <section class="palette" aria-labelledby="palette-title">
+      <div class="wrap palette__inner">
+        <div class="palette__head">
+          <h2 id="palette-title" class="h2">Кольори <em>сезону</em></h2>
+          <p>Оберіть відтінок — він одразу потрапить у вашу заявку.</p>
+        </div>
+        <ul class="swatches">
+          <li><button type="button" class="swatch" data-color="Вишня" style="--c:#7d1f2c"><span class="swatch__nail"></span><span class="swatch__name">Вишня</span></button></li>
+          <li><button type="button" class="swatch" data-color="Нюд" style="--c:#d9b4a3"><span class="swatch__nail"></span><span class="swatch__name">Нюд</span></button></li>
+          <li><button type="button" class="swatch" data-color="Молочний" style="--c:#f1e6dc"><span class="swatch__nail"></span><span class="swatch__name">Молочний</span></button></li>
+          <li><button type="button" class="swatch" data-color="Мокко" style="--c:#6b4a3c"><span class="swatch__nail"></span><span class="swatch__name">Мокко</span></button></li>
+          <li><button type="button" class="swatch" data-color="Олива" style="--c:#6f7350"><span class="swatch__nail"></span><span class="swatch__name">Олива</span></button></li>
+          <li><button type="button" class="swatch" data-color="Графіт" style="--c:#38363a"><span class="swatch__nail"></span><span class="swatch__name">Графіт</span></button></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== 3. ЦІНИ ===== -->
+    <section class="section" id="prices">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 class="h2">Ціни</h2>
+          <p>Ціна фіксована й відома до візиту. Зняття старого покриття вже входить у вартість.</p>
+        </div>
+        <div class="menu">
+          <div class="menu__group">
+            <h3 class="menu__title">Манікюр</h3>
+            <ul>
+              <li><span>Гігієнічний манікюр</span><i></i><b>300</b></li>
+              <li><span>Манікюр + покриття гель-лаком</span><i></i><b>550</b></li>
+              <li><span>Укріплення гелем</span><i></i><b>+150</b></li>
+              <li><span>Нарощування, довжина 1–2</span><i></i><b>850</b></li>
+              <li><span>Чоловічий манікюр</span><i></i><b>350</b></li>
+            </ul>
+          </div>
+          <div class="menu__group">
+            <h3 class="menu__title">Педикюр</h3>
+            <ul>
+              <li><span>Педикюр без покриття</span><i></i><b>500</b></li>
+              <li><span>Педикюр + гель-лак</span><i></i><b>650</b></li>
+              <li><span>Лише пальчики + покриття</span><i></i><b>400</b></li>
+              <li><span>Подологічна обробка стопи</span><i></i><b>700</b></li>
+            </ul>
+          </div>
+          <div class="menu__group">
+            <h3 class="menu__title">Дизайн</h3>
+            <ul>
+              <li><span>Френч / місячний</span><i></i><b>+100</b></li>
+              <li><span>Втирка, слайдер, стемпінг</span><i></i><b>+80</b></li>
+              <li><span>Малюнок, 1 ніготь</span><i></i><b>+40</b></li>
+              <li><span>Повний авторський дизайн</span><i></i><b>від 200</b></li>
+            </ul>
+          </div>
+        </div>
+        <p class="menu__note">Ціни в гривнях. Топ-майстер — +100 грн до послуги.</p>
+      </div>
+    </section>
+
+    <!-- ===== 4. РОБОТИ ===== -->
+    <section class="section section--tint" id="works">
+      <div class="wrap section__head section__head--row">
+        <h2 class="h2">Роботи <em>майстрів</em></h2>
+        <p>Більше — в Instagram <a href="https://instagram.com/" target="_blank" rel="noopener">@glaze.nails</a></p>
+      </div>
+      <ul class="works" tabindex="0" aria-label="Галерея робіт, гортайте вбік">
+        <li class="work"><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?w=700&q=75&auto=format&fit=crop" alt="Мов, білий і срібний глітер" loading="lazy"><span>Мов із глітером</span></li>
+        <li class="work"><img src="https://images.unsplash.com/photo-1769687209448-025548dfca8b?w=700&q=75&auto=format&fit=crop" alt="Ніжний дизайн з квітами" loading="lazy"><span>Ботаніка</span></li>
+        <li class="work"><img src="https://images.unsplash.com/photo-1762373349045-c2decd4ec3f3?w=700&q=75&auto=format&fit=crop" alt="Класичний френч" loading="lazy"><span>Френч</span></li>
+        <li class="work"><img src="https://images.unsplash.com/photo-1754799670312-8e7da8e40ad7?w=700&q=75&auto=format&fit=crop" alt="Синій, золото і білий" loading="lazy"><span>Синій із золотом</span></li>
+        <li class="work"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=700&q=75&auto=format&fit=crop" alt="Чорний і черепаховий дизайн" loading="lazy"><span>Черепаха</span></li>
+        <li class="work"><img src="https://images.unsplash.com/photo-1772322586702-73125782bd99?w=700&q=75&auto=format&fit=crop" alt="Синє омбре" loading="lazy"><span>Омбре</span></li>
+      </ul>
+    </section>
+
+    <!-- ===== 5. СТЕРИЛЬНІСТЬ ===== -->
+    <section class="section" id="care">
+      <div class="wrap care">
+        <figure class="care__photo">
+          <img src="https://images.unsplash.com/photo-1775500835259-d3b3f6d6e2f2?w=1000&q=75&auto=format&fit=crop" alt="Інструменти для манікюру на білому рушнику" loading="lazy">
+        </figure>
+        <div class="care__text">
+          <h2 class="h2">Стерильність — <em>не опція</em></h2>
+          <p class="care__lead">Кожен інструмент проходить чотири етапи, перш ніж торкнутися ваших рук.</p>
+          <ol class="steps">
+            <li><b>Дезінфекція</b><span>Одразу після клієнта — у розчин на 60 хвилин.</span></li>
+            <li><b>Ультразвук</b><span>Очищення від залишків, яких не видно оком.</span></li>
+            <li><b>Сухожар 180°</b><span>Стерилізація в запечатаному крафт-пакеті.</span></li>
+            <li><b>Пакет при вас</b><span>Відкриваємо на ваших очах. Пилки й бафи — одноразові.</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6. МАЙСТРИ ===== -->
+    <section class="section section--tint" id="masters">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 class="h2">Майстри</h2>
+          <p>Записуйтеся до конкретного майстра або оберіть «будь-хто вільний».</p>
+        </div>
+        <div class="masters">
+          <article class="master">
+            <img src="https://images.unsplash.com/photo-1610992015762-45dca7fa3a85?w=600&q=75&auto=format&fit=crop" alt="Робота майстрині Аліни" loading="lazy">
+            <h3>Аліна</h3>
+            <p class="master__role">Топ-майстер · 7 років</p>
+            <p>Нарощування, складний дизайн, архітектура нігтя.</p>
+          </article>
+          <article class="master">
+            <img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=600&q=75&auto=format&fit=crop" alt="Робота майстрині Вікторії" loading="lazy">
+            <h3>Вікторія</h3>
+            <p class="master__role">Майстер · 4 роки</p>
+            <p>Комбінований манікюр, френч, нюдові покриття.</p>
+          </article>
+          <article class="master">
+            <img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=600&q=75&auto=format&fit=crop" alt="Майстриня Олена за роботою" loading="lazy">
+            <h3>Олена</h3>
+            <p class="master__role">Майстер педикюру · 5 років</p>
+            <p>Апаратний педикюр, подологічні проблеми стопи.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 7. ВІДГУКИ ===== -->
+    <section class="section" id="reviews">
+      <div class="wrap">
+        <div class="section__head">
+          <h2 class="h2">Що кажуть <em>клієнтки</em></h2>
+          <p>4.9 з 5 у Google</p>
+        </div>
+        <div class="reviews">
+          <figure class="review">
+            <blockquote>Вперше покриття протрималось до корекції без жодного сколу. Ходжу до Аліни вже рік.</blockquote>
+            <figcaption>Марія</figcaption>
+          </figure>
+          <figure class="review">
+            <blockquote>Сподобалось, що пакет з інструментами відкрили при мені. Після інших салонів це заспокоює.</blockquote>
+            <figcaption>Ірина</figcaption>
+          </figure>
+          <figure class="review">
+            <blockquote>Записалась онлайн на 19:00 після роботи — прийняли хвилина в хвилину.</blockquote>
+            <figcaption>Дарина</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 8. ЗАПИС ===== -->
+    <section class="section section--deep" id="booking">
+      <div class="wrap booking">
+        <div class="booking__text">
+          <h2 class="h2">Запис <em>онлайн</em></h2>
+          <p>Залиште заявку — адміністраторка підтвердить час у Telegram або дзвінком протягом 15 хвилин.</p>
+          <ul class="booking__alt">
+            <li><a href="tel:+380670000000">+38 067 000 00 00</a></li>
+            <li><a href="https://t.me/" target="_blank" rel="noopener">Написати в Telegram</a></li>
+          </ul>
+        </div>
+        <form class="form" id="booking-form" novalidate>
+          <label class="field">
+            <span>Ім’я</span>
+            <input type="text" name="name" autocomplete="given-name" required>
+          </label>
+          <label class="field">
+            <span>Телефон</span>
+            <input type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="067 123 45 67" required>
+          </label>
+          <label class="field field--wide">
+            <span>Послуга</span>
+            <select name="service" required>
+              <option value="">Оберіть послугу</option>
+              <option>Гігієнічний манікюр — 300 грн</option>
+              <option>Манікюр + гель-лак — 550 грн</option>
+              <option>Нарощування — 850 грн</option>
+              <option>Педикюр + гель-лак — 650 грн</option>
+              <option>Манікюр + педикюр — 1 100 грн</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Майстер</span>
+            <select name="master">
+              <option>Будь-хто вільний</option>
+              <option>Аліна (топ)</option>
+              <option>Вікторія</option>
+              <option>Олена (педикюр)</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Колір</span>
+            <input type="text" name="color" id="color-field" placeholder="Оберіть у палітрі або напишіть">
+          </label>
+          <label class="field">
+            <span>Дата</span>
+            <input type="date" name="date" required>
+          </label>
+          <label class="field">
+            <span>Час</span>
+            <select name="time" required>
+              <option value="">—</option>
+              <option>09:00</option><option>10:30</option><option>12:00</option>
+              <option>13:30</option><option>15:00</option><option>16:30</option>
+              <option>18:00</option><option>19:30</option>
+            </select>
+          </label>
+          <button type="submit" class="btn btn--light field--wide">Надіслати заявку</button>
+          <p class="form__success field--wide" id="form-success" role="status" hidden>
+            Дякуємо, заявку прийнято!
+            <span>Демо: у робочій версії заявка одразу приходить адміністраторці в Telegram.</span>
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== 9. КОНТАКТИ ===== -->
+    <section class="section" id="contacts">
+      <div class="wrap contacts">
+        <div>
+          <h2 class="h2">Контакти</h2>
+          <dl class="contacts__list">
+            <div><dt>Адреса</dt><dd>Кременчук, вул. Прикладна, 7, 2 поверх</dd></div>
+            <div><dt>Графік</dt><dd>Щодня 9:00–21:00</dd></div>
+            <div><dt>Телефон</dt><dd><a href="tel:+380670000000">+38 067 000 00 00</a></dd></div>
+            <div><dt>Instagram</dt><dd><a href="https://instagram.com/" target="_blank" rel="noopener">@glaze.nails</a></dd></div>
+          </dl>
+        </div>
+        <div class="contacts__map">
+          <iframe title="Карта: студія glaze" src="https://www.google.com/maps?q=%D0%9A%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D1%87%D1%83%D0%BA&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__row">
+      <span class="logo">glaze</span>
+      <span>Демо-сайт · дизайн і розробка — <a href="https://ttjelky.github.io/portfolio" target="_blank" rel="noopener">Олексій</a> · фото: Unsplash</span>
+    </div>
+  </footer>
+
+  <a href="#booking" class="mobile-book">Записатися</a>
+
+  <script src="script.js?v=1"></script>
+</body>
+</html>
